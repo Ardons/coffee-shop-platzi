@@ -14,6 +14,7 @@ class ProductFormView(generic.FormView):
         form.save()
         return super().form_valid(form)
 
+#se crea la vista mediante *TemplateView*
 class ProductsListView(TemplateView):
     template_name = "products/lista_productos.html"
     
@@ -24,3 +25,9 @@ class ProductsListView(TemplateView):
         return {
             "productos": productos
         }
+
+#se crea la vista mediante generic.ListView
+class ProductList2View(generic.ListView):
+    model = Product
+    template_name = "products/lista_productos_2.html"
+    context_object_name = 'productos'
