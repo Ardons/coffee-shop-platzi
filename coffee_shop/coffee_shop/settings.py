@@ -38,7 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'products'
+    'crispy_forms',
+    'crispy_tailwind',
+    'products',
+    'users'
 ]
 
 MIDDLEWARE = [
@@ -128,3 +131,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 #MANEJADOR DE IMAGENES
 MEDIA_URL = "/media/"  # URL base para acceder a archivos multimedia
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")  # Ruta donde se almacenarán los archivos
+
+#CONFIGURACIONES NECESARIAS PARA https://github.com/django-crispy-forms/crispy-tailwind 
+CRISPY_ALLOWED_TEMPLATE_PACKS = "tailwind"
+CRISPY_TEMPLATE_PACK = "tailwind"
+
+#REDIRECCIONAR AL USUARIO CUANDO INGRESA A LA APP
+LOGIN_REDIRECT_URL = 'lista_productos_2'

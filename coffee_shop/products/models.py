@@ -1,5 +1,6 @@
+from django.utils import timezone
 from django.db import models
-
+import datetime
 
 # Create your models here.
 class Product(models.Model):
