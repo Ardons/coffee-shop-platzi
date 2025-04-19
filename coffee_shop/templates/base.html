@@ -132,6 +132,14 @@
                 <div class="flex items-center gap-4">
                     <div class="sm:flex sm:gap-4">
                         <p>{{ user.username }}</p>
+                        <a
+                          class="group relative inline-block text-sm font-medium text-white rounded-xl focus:ring-3 focus:outline-hidden"
+                          href="{% url 'myorder' %}"
+                        >
+                        <span class=" rounded-xl absolute inset-0 border border-indigo-700"></span>
+                        <span class="rounded-xl block border border-indigo-700 bg-indigo-600  px-4 py-1 transition-transform group-hover:-translate-x-1 group-hover:-translate-y-1">
+                          Mis Pedidos
+                        </a>
                         <form action="{% url 'logout' %}" method="post">
                             {% csrf_token %}
                             <button type="submit" class="group relative inline-block text-sm font-medium text-white rounded-xl focus:ring-3 focus:outline-hidden">
@@ -228,8 +236,8 @@
     {% block register %}
     {% endblock register %}
 
-    
-
+    {% block myorder %}
+    {% endblock myorder %}
     
 
 </body>
