@@ -1,0 +1,18 @@
+{%extends "base.html"%}
+{% load tailwind_filters %}
+
+{% block crear_orden %}
+    <h1>crear orden</h1>
+    <div class="ml-2 flex flex-col justify-center w-1/2"> 
+        <h1 class="text-xl font-bold text-gray-900 my-5 sm:text-1xl">Registarar orden</h1>
+        <form action="{% url "myorder" %}" method="post" class="w-96">
+            {% csrf_token %}
+            {{ form|crispy }}
+            
+            <button type="submit" class="inline-block rounded-sm mt-5 border border-indigo-600 bg-indigo-600 px-12 py-3 text-sm font-medium text-white hover:bg-transparent hover:text-indigo-600 focus:ring-3 focus:outline-hidden">Registar</button>
+        </form>
+        
+    </div>
+
+
+{% endblock crear_orden %}

@@ -2,22 +2,96 @@
 
 {% block myorder %}
 
+<h1 class="text-4xl my-8 font-bold text-gray-900 sm:text-5xl">
+  Ordene de Pedido - Usuario: 
+  <strong class="text-indigo-600"> {{order.user}} </strong>
+</h1>
 
-<h1>Ordenes de {{order.user}}</h1>
 
-{{order.username}}
-{{order.order_date|date}}
-
-{% for product_order in order.orderproduct_set.all %}
-    {{product_order.product.name}}
-    {{product_order.product.price}}
-{% empty %}
-    <h2>No hay items en tu orden</h2>
-{% endfor %}
+<div class="ml-5 w-2/5">
+  <div class="flow-root">
+    <dl
+      class="-my-3 divide-y divide-gray-200 rounded border border-gray-200 text-sm *:even:bg-gray-50"
+    >
+      <div class="grid grid-cols-1 gap-1 p-3 sm:grid-cols-3 sm:gap-4">
+        <dt class="font-medium text-gray-900">Orden</dt>
   
-{#{% debug order %}#}
+        <dd class="text-gray-700 sm:col-span-2">{{order.order_date|date}}</dd>
+      </div>
+  
+      <div class="grid grid-cols-1 gap-1 p-3 sm:grid-cols-3 sm:gap-4">
+        <dt class="font-medium text-gray-900">Nombre</dt>
+  
+        <dd class="text-gray-700 sm:col-span-2">{{order.user}}</dd>
+      </div>
+  
+      <div class="grid grid-cols-1 gap-1 p-3 sm:grid-cols-3 sm:gap-4">
+        <dt class="font-medium text-gray-900">Activa</dt>
+  
+        <dd class="text-gray-700 sm:col-span-2">{{order.is_active}}</dd>
+      </div>
 
+      <div class="grid grid-cols-1 gap-1 p-3 sm:grid-cols-3 sm:gap-4">
+        <dt class="font-bold text-gray-900">Productos</dt>
+      </div>
+      
+      {% for product_order in order.orderproduct_set.all %}
 
+      <div class="grid grid-cols-1 gap-1 p-3 sm:grid-cols-3 sm:gap-4">
+        <dt class="font-medium text-gray-900">{{product_order.product.name}}</dt>
+  
+        <dd class="text-gray-700 sm:col-span-2">{{product_order.product.price}}</dd>
+      </div>
+      {% empty %}
+      <h2>No hay items en tu orden</h2>
 
+      {% endfor %}
+        
+     
+
+    </dl>
+  </div>
+</div>
+
+{#{% debug %}#}
+
+{% comment "" %}
+<div class="flow-root">
+    <dl
+      class="-my-3 divide-y divide-gray-200 rounded border border-gray-200 text-sm *:even:bg-gray-50"
+    >
+      <div class="grid grid-cols-1 gap-1 p-3 sm:grid-cols-3 sm:gap-4">
+        <dt class="font-medium text-gray-900">Orden</dt>
+  
+        <dd class="text-gray-700 sm:col-span-2"></dd>
+      </div>
+  
+      <div class="grid grid-cols-1 gap-1 p-3 sm:grid-cols-3 sm:gap-4">
+        <dt class="font-medium text-gray-900">Nombre</dt>
+  
+        <dd class="text-gray-700 sm:col-span-2">{{order.user}}</dd>
+      </div>
+  
+      <div class="grid grid-cols-1 gap-1 p-3 sm:grid-cols-3 sm:gap-4">
+        <dt class="font-medium text-gray-900">Activa</dt>
+  
+        <dd class="text-gray-700 sm:col-span-2">{{order.is_active}}</dd>
+      </div>
+  
+      <div class="grid grid-cols-1 gap-1 p-3 sm:grid-cols-3 sm:gap-4">
+        <dt class="font-medium text-gray-900">Producto</dt>
+  
+        <dd class="text-gray-700 sm:col-span-2">{{product_order.product.name}}</dd>
+      </div>
+
+      <div class="grid grid-cols-1 gap-1 p-3 sm:grid-cols-3 sm:gap-4">
+        <dt class="font-medium text-gray-900">Precio</dt>
+  
+        <dd class="text-gray-700 sm:col-span-2">{{product_order.product.price}}</dd>
+      </div>
+    </dl>
+  </div>
+
+{% endcomment %}
 
 {% endblock myorder %}
