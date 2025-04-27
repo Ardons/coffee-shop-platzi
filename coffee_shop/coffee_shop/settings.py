@@ -30,7 +30,10 @@ SECRET_KEY = "django-insecure-*7ln5%g*^m!2@5z6iz%$k3=b3@rbo1eq8*aotf@4r#u(3lx$rz
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'coffee-shop-production.eba-t5k3rbih.us-east-1.elasticbeanstalk.com'
+    'coffee-shop-production.eba-xipn3ddm.us-east-1.elasticbeanstalk.com',  # Tu dominio de Beanstalk
+    '172.31.40.213',   # La IP interna de la instancia (solo para pruebas internas)
+    '127.0.0.1',       # localhost
+    'localhost'
 ]
 
 
