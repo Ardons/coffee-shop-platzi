@@ -3,8 +3,10 @@ from .views import ProductFormView, ProductsListView, ProductList2View, ProductL
 
 
 urlpatterns = [
-    path('agregar/', ProductFormView.as_view(), name="add_product"),
-    path('lista_productos/', ProductsListView.as_view(), name='lista_productos'),
-    path('lista_productos_2/', ProductList2View.as_view(), name='lista_productos_2'),
-    path('api/', ProductListAPI.as_view(), name="api")
+    path("", ProductList2View.as_view(), name="lista_productos_2"),
+    path("agregar/", ProductFormView.as_view(), name="add_product"),
+    path("lista_productos/", ProductsListView.as_view(), name="lista_productos"),    
+    path("api/", ProductListAPI.as_view(), name="api"),
 ]
+
+#lista_productos_2/

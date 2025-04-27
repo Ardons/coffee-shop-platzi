@@ -3,6 +3,7 @@ from .models import Order, OrderProduct
 
 # Register your models here.
 
+
 class OrderProductInLineAdmin(admin.TabularInline):
     model = OrderProduct
     extra = 0
@@ -10,8 +11,7 @@ class OrderProductInLineAdmin(admin.TabularInline):
 
 class OrderAdmin(admin.ModelAdmin):
     model = Order
-    inlines = [
-        OrderProductInLineAdmin
-    ]
-    
+    inlines = [OrderProductInLineAdmin]
+
+
 admin.site.register(Order, OrderAdmin)
