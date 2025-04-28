@@ -30,13 +30,13 @@ SECRET_KEY = "django-insecure-*7ln5%g*^m!2@5z6iz%$k3=b3@rbo1eq8*aotf@4r#u(3lx$rz
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'coffee-shop-production.eba-xipn3ddm.us-east-1.elasticbeanstalk.com',  # Tu dominio de Beanstalk
-    '172.31.40.213',   # La IP interna de la instancia (solo para pruebas internas)
-    '52.21.65.19',     # Dirección IP pública
-    '127.0.0.1',       # localhost
-    'localhost'
+    'coffee-shop-production.eba-xipn3ddm.us-east-1.elasticbeanstalk.com',
+    '172.31.40.213',  # IP privada
+    '127.0.0.1',      # Localhost
+    'localhost',
+    '52.21.65.19',    # IP pública de la instancia
+    '.elasticbeanstalk.com',  # para subdominios dinámicos si quieres permitir todos los de EB
 ]
-
 
 # Application definition
 
