@@ -32,6 +32,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     'coffee-shop-production.eba-xipn3ddm.us-east-1.elasticbeanstalk.com',  # Tu dominio de Beanstalk
     '172.31.40.213',   # La IP interna de la instancia (solo para pruebas internas)
+    '52.21.65.19',     # Dirección IP pública
     '127.0.0.1',       # localhost
     'localhost'
 ]
