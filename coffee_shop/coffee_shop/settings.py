@@ -35,7 +35,8 @@ ALLOWED_HOSTS = [
     '127.0.0.1',      # Localhost
     'localhost',
     '52.21.65.19',    # IP pública de la instancia
-    '.elasticbeanstalk.com',  # para subdominios dinámicos si quieres permitir todos los de EB
+    '.elasticbeanstalk.com',    # para subdominios dinámicos si quieres permitir todos los de EB
+    '3.95.145.254'
 ]
 
 # Application definition
