@@ -31,11 +31,12 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     'coffee-shop-production.eba-xipn3ddm.us-east-1.elasticbeanstalk.com',
+    'awseb--awseb-spp4dq50fmb3-971670769.us-east-1.elb.amazonaws.com'
     '172.31.40.213',  # IP privada
     '127.0.0.1',      # Localhost
     'localhost',
     '52.21.65.19',    # IP pública de la instancia
-    '.elasticbeanstalk.com',    # para subdominios dinámicos si quieres permitir todos los de EB
+    '.elasticbeanstalk.com',    
     '3.95.145.254'
 ]
 
