@@ -31,11 +31,11 @@ DEBUG = False
 
 ALLOWED_HOSTS = [
     'coffee-shop-production.eba-xipn3ddm.us-east-1.elasticbeanstalk.com',
-    'awseb--awseb-spp4dq50fmb3-971670769.us-east-1.elb.amazonaws.com'
-    '172.31.40.213',  # IP privada
-    '127.0.0.1',      # Localhost
+    'awseb--awseb-spp4dq50fmb3-971670769.us-east-1.elb.amazonaws.com',
+    '172.31.40.213', 
+    '127.0.0.1',     
     'localhost',
-    '52.21.65.19',    # IP pública de la instancia
+    '52.21.65.19',    
     '.elasticbeanstalk.com',    
     '3.95.145.254'
 ]
@@ -59,6 +59,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware", 
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -66,6 +67,8 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
+
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 ROOT_URLCONF = "coffee_shop.urls"
 
@@ -128,7 +131,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
 STATIC_URL = "static/"
-STATIC_ROOT = "static"
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
